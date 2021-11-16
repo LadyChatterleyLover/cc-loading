@@ -1,12 +1,34 @@
 {
   "name": "cc-loading",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "cc"
+  },
+  "keywords": [
+    "loading",
+    "vue-loading",
+    "spinkit",
+    "loaders",
+    "component",
+    "components",
+    "design",
+    "framework",
+    "frontend",
+    "vue",
+    "vue3",
+    "vue-component",
+    "ui",
+    "cc-ui",
+    "cc"
+  ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name cc-loading --dest lib packages/index.ts"
   },
   "dependencies": {
+    "cc-loading": "^1.2.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },

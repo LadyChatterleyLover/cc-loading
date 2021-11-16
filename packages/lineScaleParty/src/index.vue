@@ -1,0 +1,129 @@
+<template>
+  <cc-loader :text="text" :style="style" :visible="visible" :textColor="textColor">
+    <div class="line-scale-party">
+      <div
+        :style="{
+          backgroundColor: color,
+          width: `${size}px`,
+          height: `${size}px`,
+        }"
+      ></div>
+      <div
+        :style="{
+          backgroundColor: color,
+          width: `${size}px`,
+          height: `${size}px`,
+        }"
+      ></div>
+      <div
+        :style="{
+          backgroundColor: color,
+          width: `${size}px`,
+          height: `${size}px`,
+        }"
+      ></div>
+      <div
+        :style="{
+          backgroundColor: color,
+          width: `${size}px`,
+          height: `${size}px`,
+        }"
+      ></div>
+    </div>
+  </cc-loader>
+</template>
+
+<script lang='ts' setup>
+import { CSSProperties } from 'vue'
+
+defineProps<{
+  color?: string,
+  size?: number,
+  text?: string,
+  textColor?: string,
+  textOffset?: number,
+  visible?: boolean,
+  style?: CSSProperties
+}>()
+</script>
+
+<style lang='scss' scoped>
+@import "../../theme";
+
+@-webkit-keyframes line-scale-party {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes line-scale-party {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.cc-loader-wrap {
+  .line-scale-party > div:nth-child(1) {
+    -webkit-animation-delay: 0.48s;
+    animation-delay: 0.48s;
+    -webkit-animation-duration: 0.54s;
+    animation-duration: 0.54s;
+  }
+
+  .line-scale-party > div:nth-child(2) {
+    -webkit-animation-delay: -0.15s;
+    animation-delay: -0.15s;
+    -webkit-animation-duration: 1.15s;
+    animation-duration: 1.15s;
+  }
+
+  .line-scale-party > div:nth-child(3) {
+    -webkit-animation-delay: 0.04s;
+    animation-delay: 0.04s;
+    -webkit-animation-duration: 0.77s;
+    animation-duration: 0.77s;
+  }
+
+  .line-scale-party > div:nth-child(4) {
+    -webkit-animation-delay: -0.12s;
+    animation-delay: -0.12s;
+    -webkit-animation-duration: 0.61s;
+    animation-duration: 0.61s;
+  }
+
+  .line-scale-party > div {
+    background-color: $primary-color;
+    width: 4px;
+    height: 35px;
+    border-radius: 2px;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+    -webkit-animation-name: line-scale-party;
+    animation-name: line-scale-party;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+  }
+}
+</style>
